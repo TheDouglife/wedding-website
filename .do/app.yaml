@@ -1,0 +1,13 @@
+name: wedding-website
+region: nyc
+static_sites:
+  - name: web
+    github:
+      repo: TheDouglife/wedding-website
+      branch: main
+      deploy_on_push: true
+    build_command: npm ci && npm run build
+    output_dir: dist
+    environment_slug: node-js
+    routes:
+      - path: /
