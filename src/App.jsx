@@ -21,29 +21,70 @@ const gallery = [
   }
 ];
 
-const timeline = [
-  { day: '18', label: 'Days' },
-  { day: '28', label: 'Hours' },
-  { day: '03', label: 'Minutes' },
-  { day: '25', label: 'Seconds' }
-];
+import { useEffect, useState } from 'react';
+
+const weddingDate = new Date('2026-12-13T17:00:00');
+
+function getTimeRemaining() {
+  const now = new Date();
+  const diff = weddingDate.getTime() - now.getTime();
+
+  if (diff <= 0) {
+    return {
+      days: '00',
+      hours: '00',
+      minutes: '00',
+      seconds: '00'
+    };
+  }
+
+  const totalSeconds = Math.floor(diff / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  return {
+    days: String(days).padStart(2, '0'),
+    hours: String(hours).padStart(2, '0'),
+    minutes: String(minutes).padStart(2, '0'),
+    seconds: String(seconds).padStart(2, '0')
+  };
+}
 
 const events = [
   {
     title: 'The Reception',
-    text: 'Saturday, April 15th at 12:00 PM\nLong Lake Club, New York'
+    text: 'Sunday, December 13th at 6:30 PM\nLong Lake Club, New York'
   },
   {
     title: 'The Ceremony',
-    text: 'Saturday, April 15th at 2:00 PM\nSt. Patrick Church, New York'
+    text: 'Sunday, December 13th at 5:00 PM\nSt. Patrick Church, New York'
   },
   {
     title: 'The Party',
-    text: 'Saturday, April 15th at 8:00 PM\nMadison Hall, New York'
+    text: 'Sunday, December 13th at 8:00 PM\nMadison Hall, New York'
   }
 ];
 
 function App() {
+  const [countdown, setCountdown] = useState(getTimeRemaining());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountdown(getTimeRemaining());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const timeline = [
+    { day: countdown.days, label: 'Days' },
+    { day: countdown.hours, label: 'Hours' },
+    { day: countdown.minutes, label: 'Minutes' },
+    { day: countdown.seconds, label: 'Seconds' }
+  ];
+
   return (
     <div className="site">
       <header className="hero">
@@ -51,7 +92,7 @@ function App() {
         <div className="hero-inner">
           <p className="eyebrow">We're Getting Married</p>
           <h1>Doug &amp; Tiffany</h1>
-          <p className="meta">New York, April 15th, 2027</p>
+          <p className="meta">New York, December 13th, 2026 at 5:00 PM</p>
           <div className="countdown" aria-label="Countdown">
             {timeline.map((item) => (
               <div key={item.label} className="count-item">
@@ -77,7 +118,7 @@ function App() {
                 src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80"
                 alt="Bride portrait"
               />
-              <h3>Tiffany Cols</h3>
+              <h3>Tiffany Lee Jordan</h3>
               <p>Creative director, coffee lover, and the most radiant smile in every room.</p>
             </article>
             <article className="person featured">
@@ -94,7 +135,7 @@ function App() {
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
                 alt="Groom portrait"
               />
-              <h3>Doug Cols</h3>
+              <h3>Douglas Allen Montgomery JR</h3>
               <p>Engineer, mountain dreamer, and the calm heart behind our adventure.</p>
             </article>
           </div>
@@ -117,7 +158,6 @@ function App() {
 
         <section className="section rsvp">
           <div className="rsvp-form">
-            <p className="section-kicker">Will You Attend?</p>
             <h2>Attendance</h2>
             <form>
               <input type="text" placeholder="Full name" />
@@ -151,8 +191,8 @@ function App() {
         </section>
 
         <section className="banner-date">
-          <p>April 15th, 2027</p>
-          <span>Save the date and reserve your seat</span>
+          <p>December 13th, 2026</p>
+          <span>Ceremony begins at 5:00 PM</span>
         </section>
 
         <section className="section when-where">
