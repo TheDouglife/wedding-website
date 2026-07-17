@@ -21,6 +21,17 @@ const gallery = [
   }
 ];
 
+const venuePhotos = [
+  'https://thevenue.us/wp-content/uploads/2026/03/Dorosh-Documentaries-The-Venue-Exteriors-9408.jpg',
+  'https://thevenue.us/wp-content/uploads/2026/03/Dorosh-Documentaries-The-Venue-Groom-Suite9087.jpg',
+  'https://thevenue.us/wp-content/uploads/2026/03/Dorosh-Documentaries-The-Venue-Bridal-Suite8630.jpg',
+  'https://thevenue.us/wp-content/uploads/2026/03/Dorosh-Documentaries-The-Venue-8984.jpg',
+  'https://thevenue.us/wp-content/uploads/2026/03/Dorosh-Documentaries-The-Venue-Exteriors-8537.jpg',
+  'https://thevenue.us/wp-content/uploads/2026/03/Dorosh-Documentaries-The-Venue-Reception-19646.jpg',
+  'https://thevenue.us/wp-content/uploads/2026/03/Dorosh-Documentaries-The-Venue-Groom-Suite9007.jpg',
+  'https://thevenue.us/wp-content/uploads/2026/03/Dorosh-Documentaries-The-Venue-8863.jpg'
+];
+
 import { useEffect, useState } from 'react';
 
 const weddingDate = new Date('2026-12-13T17:00:00');
@@ -88,6 +99,20 @@ function App() {
   return (
     <div className="site">
       <header className="hero">
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source
+            src="https://thevenue.us/wp-content/uploads/2026/04/the_venue_overview_promo-1080p.mp4"
+            type="video/mp4"
+          />
+        </video>
         <div className="overlay" />
         <div className="hero-inner">
           <p className="eyebrow">We're Getting Married</p>
@@ -172,14 +197,14 @@ function App() {
         </section>
 
         <section className="section photos">
-          <p className="section-kicker">Our Wedding Gallery</p>
-          <h2>Moments</h2>
+          <p className="section-kicker">Our Wedding Venue</p>
+          <h2>Our Wedding Venue</h2>
           <div className="grid-8">
-            {Array.from({ length: 8 }).map((_, index) => (
+            {venuePhotos.map((photo, index) => (
               <img
                 key={index}
-                src={`https://picsum.photos/seed/wed-${index + 1}/500/340`}
-                alt={`Wedding memory ${index + 1}`}
+                src={photo}
+                alt={`Wedding venue ${index + 1}`}
                 loading="lazy"
               />
             ))}
