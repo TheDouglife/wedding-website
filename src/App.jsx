@@ -212,7 +212,7 @@ function App() {
 
         <section className="section rsvp">
           <div className="rsvp-note">
-            <h3>Wedding Registry</h3>
+            <h2>Wedding Registry</h2>
             <p>
               Your love and support mean the world to us. If you would like to bless us with a
               gift, you can view our registry below.
