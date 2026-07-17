@@ -65,16 +65,16 @@ function getTimeRemaining() {
 
 const events = [
   {
+    title: 'Cocktail hour',
+    text: 'Sunday, December 13th 5:00PM-6:00PM'
+  },
+  {
     title: 'The Reception',
-    text: 'Sunday, December 13th at 6:30 PM\nLong Lake Club, New York'
+    text: 'Sunday, December 13th at 6:00PM'
   },
   {
     title: 'The Ceremony',
-    text: 'Sunday, December 13th at 5:00 PM\nSt. Patrick Church, New York'
-  },
-  {
-    title: 'The Party',
-    text: 'Sunday, December 13th at 8:00 PM\nMadison Hall, New York'
+    text: 'Sunday, December 13th at 4:30PM'
   }
 ];
 
@@ -196,7 +196,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section photos">
+        <section className="section photos rsvp-note-space">
           <h2>Wedding Venue</h2>
           <div className="grid-8">
             {venuePhotos.map((photo, index) => (
@@ -234,19 +234,13 @@ function App() {
         </section>
 
         <section className="section when-where">
-          <p className="section-kicker">When &amp; Where</p>
           <h2>Details</h2>
           <div className="event-grid">
             {events.map((event) => (
               <article key={event.title}>
                 <h3>{event.title}</h3>
                 <p>
-                  {event.text.split('\n').map((line) => (
-                    <span key={line}>
-                      {line}
-                      <br />
-                    </span>
-                  ))}
+                  {event.text}
                 </p>
               </article>
             ))}
