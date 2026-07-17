@@ -197,8 +197,7 @@ function App() {
         </section>
 
         <section className="section photos">
-          <p className="section-kicker">Our Wedding Venue</p>
-          <h2>Our Wedding Venue</h2>
+          <h2>Wedding Venue</h2>
           <div className="grid-8">
             {venuePhotos.map((photo, index) => (
               <img
