@@ -118,7 +118,7 @@ function App() {
         <section className="section rsvp">
           <div className="rsvp-form">
             <p className="section-kicker">Will You Attend?</p>
-            <h2>RSVP</h2>
+            <h2>Attendance</h2>
             <form>
               <input type="text" placeholder="Full name" />
               <input type="email" placeholder="Email" />
@@ -130,7 +130,7 @@ function App() {
                 <option>2</option>
                 <option>3</option>
               </select>
-              <button type="button">RSVP</button>
+              <button type="button">Confirm Attendance</button>
             </form>
           </div>
           <div className="rsvp-note">
