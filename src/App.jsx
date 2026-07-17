@@ -119,7 +119,7 @@ function App() {
                 alt="Bride portrait"
               />
               <h3>Tiffany Lee Jordan</h3>
-              <p>Creative director, coffee lover, and the most radiant smile in every room.</p>
+              <p>Costume Designer, Dog Mom, Rhinestone Afficianato, and lover of all things sparkley.</p>
             </article>
             <article className="person featured">
               <h3>The Wedding Day</h3>
