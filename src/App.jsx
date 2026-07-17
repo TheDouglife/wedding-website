@@ -211,22 +211,6 @@ function App() {
         </section>
 
         <section className="section rsvp">
-          <div className="rsvp-form">
-            <h2>Attendance</h2>
-            <form>
-              <input type="text" placeholder="Full name" />
-              <input type="email" placeholder="Email" />
-              <select defaultValue="">
-                <option value="" disabled>
-                  Number of guests
-                </option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-              <button type="button">Confirm Attendance</button>
-            </form>
-          </div>
           <div className="rsvp-note">
             <h3>Wedding Registry</h3>
             <p>
