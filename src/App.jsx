@@ -134,11 +134,19 @@ function App() {
             </form>
           </div>
           <div className="rsvp-note">
-            <h3>We're Honored You Can Join</h3>
+            <h3>Wedding Registry</h3>
             <p>
-              Your presence means everything to us. Please confirm attendance before March 20th.
+              Your love and support mean the world to us. If you would like to bless us with a
+              gift, you can view our registry below.
             </p>
-            <button type="button">Read More</button>
+            <a
+              className="registry-link"
+              href="https://www.myregistry.com/wedding-registry/douglas-montgomery-and-tiffany-jordan-satsuma-fl/5536767"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Registry
+            </a>
           </div>
         </section>
 
