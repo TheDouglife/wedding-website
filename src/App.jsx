@@ -109,8 +109,20 @@ function App() {
           <p className="section-kicker">Bride &amp; Groom</p>
           <h2>Our Story</h2>
           <p>
-            We met by chance, stayed by choice, and now we cannot wait to celebrate this day with
-            the people we love.
+            Doug and Tiffany met on February 10, 2024, on a blind date in Palatka, Florida.
+            Tiffany spotted Doug beneath the clock tower across from the restaurant, and they fell
+            in love that very night. They were seated at table 13, a number that became an
+            invisible string throughout their relationship. Since then, they have shared many
+            adventures together, traveling to Georgia, California, Indianapolis, Tennessee, New
+            York, and beyond. In the short time they have known each other, they have already
+            lived a lot of life, and through every tribulation, their love has remained constant.
+            It guides them, gives them strength, and reminds them that they are soulmates destined
+            to meet on that fateful February evening. Doug proposed to Tiffany on November 3,
+            2024, at Taylor Swift's final US performance of the Eras Tour. Surrounded by 69,000
+            Swifties, Doug asked Tiffany to marry him while Taylor sang Love Story, and the crowd
+            cheered. They celebrated their engagement at an unforgettable show and continue to
+            share a love of traveling, trying new restaurants, Taylor Swift, and their pets: Row
+            Eliza, Poncho, Winston, Fee-Fee, Bao, Bun, Spottie, Dottie, and Smokey.
           </p>
           <div className="people">
             <article className="person">
@@ -124,10 +136,22 @@ function App() {
             <article className="person featured">
               <h3>The Wedding Day</h3>
               <p>
-                Our celebration begins with vows, laughter, and a long dance under city lights.
+                They have lived a lot of life in the short time they have known each other, and
+                through all life tribulations, the love they share always remains.
               </p>
               <p>
-                We are so grateful to share this day with family and friends from near and far.
+                It guides them, gives them strength, and reminds them they are soulmates destined
+                to meet that fateful February evening.
+              </p>
+              <p>
+                Doug proposed to Tiffany on November 3rd, 2024, at Taylor Swift's final US
+                performance of the Eras Tour. Surrounded by 69,000 Swifties, he proposed while
+                Taylor sang Love Story, and the entire crowd cheered.
+              </p>
+              <p>
+                They celebrated their engagement at an unforgettable show and continue to share a
+                love of travel, trying new restaurants, Taylor Swift, and their pets: Row Eliza,
+                Poncho, Winston, Fee-Fee, Bao, Bun, Spottie, Dottie, and Smokey.
               </p>
             </article>
             <article className="person">
