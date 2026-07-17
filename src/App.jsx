@@ -65,16 +65,16 @@ function getTimeRemaining() {
 
 const events = [
   {
+    title: 'The Ceremony',
+    text: 'Sunday, December 13th at 4:30PM'
+  },
+  {
     title: 'Cocktail hour',
     text: 'Sunday, December 13th 5:00PM-6:00PM'
   },
   {
     title: 'The Reception',
     text: 'Sunday, December 13th at 6:00PM'
-  },
-  {
-    title: 'The Ceremony',
-    text: 'Sunday, December 13th at 4:30PM'
   }
 ];
 
