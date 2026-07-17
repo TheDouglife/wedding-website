@@ -92,7 +92,7 @@ function App() {
         <div className="hero-inner">
           <p className="eyebrow">We're Getting Married</p>
           <h1>Doug &amp; Tiffany</h1>
-          <p className="meta">New York, December 13th, 2026 at 5:00 PM</p>
+          <p className="meta">Hastings, Florida. December 13th, 2026</p>
           <div className="countdown" aria-label="Countdown">
             {timeline.map((item) => (
               <div key={item.label} className="count-item">
