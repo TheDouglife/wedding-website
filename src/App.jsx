@@ -119,10 +119,12 @@ function App() {
             It guides them, gives them strength, and reminds them that they are soulmates destined
             to meet on that fateful February evening.
             <br />
+            <br />
             Doug proposed to Tiffany on November 3,
             2024, at Taylor Swift's final US performance of the Eras Tour. Surrounded by 69,000
             Swifties, Doug asked Tiffany to marry him while Taylor sang Love Story, and the crowd
             cheered.
+            <br />
             <br />
             They celebrated their engagement at an unforgettable show and continue to
             share a love of traveling, trying new restaurants, Taylor Swift, and their pets: Row
