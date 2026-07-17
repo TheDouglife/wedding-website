@@ -50,7 +50,7 @@ function App() {
         <div className="overlay" />
         <div className="hero-inner">
           <p className="eyebrow">We're Getting Married</p>
-          <h1>Emily &amp; Mike</h1>
+          <h1>Doug &amp; Tiffany</h1>
           <p className="meta">New York, April 15th, 2027</p>
           <div className="countdown" aria-label="Countdown">
             {timeline.map((item) => (
@@ -77,7 +77,7 @@ function App() {
                 src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80"
                 alt="Bride portrait"
               />
-              <h3>Emily Cols</h3>
+              <h3>Tiffany Cols</h3>
               <p>Creative director, coffee lover, and the most radiant smile in every room.</p>
             </article>
             <article className="person featured">
@@ -94,7 +94,7 @@ function App() {
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
                 alt="Groom portrait"
               />
-              <h3>Mike Cols</h3>
+              <h3>Doug Cols</h3>
               <p>Engineer, mountain dreamer, and the calm heart behind our adventure.</p>
             </article>
           </div>
