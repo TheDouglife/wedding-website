@@ -265,22 +265,26 @@ function App() {
           <iframe
             title="Wedding map"
             loading="lazy"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-74.31%2C40.43%2C-73.55%2C40.98&layer=mapnik"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-81.5182%2C29.7112%2C-81.4982%2C29.7232&layer=mapnik"
           />
         </section>
       </main>
 
       <footer className="footer">
         <div>
-          <h4>The Aisle Co.</h4>
-          <p>Long Lake Club, New York</p>
-          <p>+1 555 234 4567</p>
+          <h4>Doug &amp; Tiffany Wedding</h4>
+          <p>Hastings, FL</p>
         </div>
         <div>
           <h4>Useful Links</h4>
-          <p>Gift Registry</p>
-          <p>Accommodation</p>
-          <p>Transport</p>
+          <a
+            className="registry-link"
+            href="https://www.myregistry.com/wedding-registry/douglas-montgomery-and-tiffany-jordan-satsuma-fl/5536767"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Gift Registry
+          </a>
         </div>
         <div>
           <h4>Instagram</h4>
