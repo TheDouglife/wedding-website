@@ -6,8 +6,8 @@ export default defineConfig({
   preview: {
     allowedHosts: [
       'dl-wedding-app-598yl.ondigitalocean.app',
-      'rowsalie.com',
-      'www.rowsalie.com'
+      'montgomery.wedding',
+      'www.montgomery.wedding'
     ]
   }
 });
