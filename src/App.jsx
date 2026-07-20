@@ -1,26 +1,3 @@
-const gallery = [
-  {
-    title: 'Video + Photo Story',
-    image:
-      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80'
-  },
-  {
-    title: 'Wedding Bouquet',
-    image:
-      'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80'
-  },
-  {
-    title: 'Table Decoration',
-    image:
-      'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=900&q=80'
-  },
-  {
-    title: 'Ready Dress',
-    image:
-      'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80'
-  }
-];
-
 const venuePhotos = [
   'https://thevenue.us/wp-content/uploads/2026/03/Dorosh-Documentaries-The-Venue-Exteriors-9408.jpg',
   'https://thevenue.us/wp-content/uploads/2026/03/Dorosh-Documentaries-The-Venue-Groom-Suite9087.jpg',
@@ -242,20 +219,6 @@ function App() {
                 <p>
                   {event.text}
                 </p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section posts">
-          <p className="section-kicker">Absolutely Something For You</p>
-          <h2>Latest Posts</h2>
-          <div className="post-grid">
-            {gallery.map((item) => (
-              <article key={item.title}>
-                <img src={item.image} alt={item.title} loading="lazy" />
-                <h3>{item.title}</h3>
-                <p>Fresh inspiration and details for the celebration weekend.</p>
               </article>
             ))}
           </div>
