@@ -10,6 +10,8 @@ const venuePhotos = [
 ];
 
 import { useEffect, useState } from 'react';
+import tiffanyPortrait from '../tippy.webp';
+import douglasPortrait from '../douglas-allen-montgomery.jpg';
 
 const weddingDate = new Date('2026-12-13T17:00:00');
 
@@ -135,7 +137,7 @@ function App() {
           <div className="people">
             <article className="person">
               <img
-                src="/tippy.webp"
+                src={tiffanyPortrait}
                 alt="Bride portrait"
               />
               <h3>Tiffany Lee Jordan</h3>
@@ -164,7 +166,7 @@ function App() {
             </article>
             <article className="person">
               <img
-                src="/douglas-allen-montgomery.jpg"
+                src={douglasPortrait}
                 alt="Groom portrait"
               />
               <h3>Douglas Allen Montgomery JR</h3>
