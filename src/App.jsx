@@ -135,7 +135,7 @@ function App() {
           <div className="people">
             <article className="person">
               <img
-                src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80"
+                src="/tippy.webp"
                 alt="Bride portrait"
               />
               <h3>Tiffany Lee Jordan</h3>
