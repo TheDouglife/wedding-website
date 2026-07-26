@@ -12,6 +12,7 @@ const venuePhotos = [
 import { useEffect, useState } from 'react';
 import tiffanyPortrait from '../tippy.webp';
 import douglasPortrait from '../douglas-allen-montgomery.jpg';
+import animalFamilyPhoto from '../the-animal-family.png';
 
 const weddingDate = new Date('2026-12-13T17:00:00');
 
@@ -149,8 +150,8 @@ function App() {
 
       <main>
         <section className="section intro">
-          <p className="section-kicker">Bride &amp; Groom</p>
           <h2>Our Story</h2>
+          <p className="section-kicker">Bride &amp; Groom</p>
           <p className="story-paragraph">
             Doug and Tiffany met on February 10, 2024, on a blind date in Palatka, Florida.
             Tiffany spotted Doug beneath the clock tower across from the restaurant, and they fell
@@ -183,11 +184,19 @@ function App() {
             Swifties, Doug asked Tiffany to marry him while Taylor sang Love Story, and the crowd
             cheered.
           </p>
-          <p className="story-paragraph">
+          <p className="story-paragraph pets-paragraph">
             They celebrated their engagement at an unforgettable show and continue to
             share a love of traveling, trying new restaurants, Taylor Swift, and their pets: Row
             Eliza, Poncho, Winston, Fee-Fee, Bao, Bun, Spottie, Dottie, and Smokey.
           </p>
+          <div className="animal-family-photo-wrap">
+            <img
+              className="animal-family-photo"
+              src={animalFamilyPhoto}
+              alt="Row Eliza, Poncho, Winston, Fee-Fee, Bao, Bun, Spottie, Dottie, and Smokey"
+              loading="lazy"
+            />
+          </div>
           <div className="people">
             <article className="person">
               <img
