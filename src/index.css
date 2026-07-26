@@ -139,10 +139,62 @@ h4 {
   font-size: clamp(1.8rem, 4vw, 2.4rem);
 }
 
-.intro > p {
+.intro .story-paragraph {
   text-align: center;
   max-width: 58ch;
   margin: 0.4rem auto 2.2rem;
+}
+
+.proposal-video-link-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0.2rem 0 1.2rem;
+}
+
+.proposal-video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #7f4f2f;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  font-size: 0.72rem;
+}
+
+.play-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(127, 79, 47, 0.45);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 25px rgba(127, 79, 47, 0.2);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.play-icon::before {
+  content: '';
+  position: absolute;
+  left: 1.23rem;
+  top: 1rem;
+  width: 0;
+  height: 0;
+  border-top: 0.6rem solid transparent;
+  border-bottom: 0.6rem solid transparent;
+  border-left: 0.95rem solid #7f4f2f;
+}
+
+.proposal-video-link:hover .play-icon,
+.proposal-video-link:focus-visible .play-icon {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(127, 79, 47, 0.28);
+}
+
+.proposal-video-link:focus-visible {
+  outline: 2px solid #7f4f2f;
+  outline-offset: 4px;
 }
 
 .people {
@@ -317,6 +369,61 @@ button {
   display: block;
 }
 
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(13, 17, 24, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.video-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.video-modal-content {
+  width: min(760px, 100%);
+  max-height: 92vh;
+  overflow: auto;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 26px 80px rgba(13, 31, 54, 0.35);
+}
+
+.video-modal-content h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 0.4rem 0 1rem;
+}
+
+.video-modal-close {
+  display: inline-block;
+  margin-left: auto;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  padding: 0.45rem 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+}
+
+.tiktok-embed-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.tiktok-embed-wrap .tiktok-embed {
+  margin: 0;
+}
+
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -374,6 +481,21 @@ button {
 
   .grid-8 img {
     height: 200px;
+  }
+
+  .proposal-video-link {
+    gap: 0.5rem;
+    letter-spacing: 0.1em;
+  }
+
+  .play-icon {
+    width: 2.9rem;
+    height: 2.9rem;
+  }
+
+  .play-icon::before {
+    left: 1.08rem;
+    top: 0.84rem;
   }
 }
 

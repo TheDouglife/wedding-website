@@ -57,8 +57,11 @@ const events = [
   }
 ];
 
+const tiktokEmbedMarkup = `<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@iamdouglife/video/7433618584569515307" data-video-id="7433618584569515307" style="max-width: 605px;min-width: 325px;"><section><a target="_blank" title="@iamdouglife" href="https://www.tiktok.com/@iamdouglife?refer=embed">@iamdouglife</a> \u201cYou have to be unapologetically you and go for what you want.\u201d Thank you all for being there for me in our special moment, it was absolutely enchanting. @Tiffany Special thanks to @Taylor Swift &amp; @Travis Kelce for giving us the blueprint to love unconditonally. <a title="erastour" target="_blank" href="https://www.tiktok.com/tag/erastour?refer=embed">#erastour</a> <a title="erasproposal" target="_blank" href="https://www.tiktok.com/tag/erasproposal?refer=embed">#erasproposal</a> <a title="indyn3" target="_blank" href="https://www.tiktok.com/tag/indyn3?refer=embed">#indyn3</a> <a title="n3" target="_blank" href="https://www.tiktok.com/tag/n3?refer=embed">#n3</a> <a title="erastourindy" target="_blank" href="https://www.tiktok.com/tag/erastourindy?refer=embed">#erastourindy</a> @Taylor Nation <a target="_blank" title="\u266c original sound - Douglife" href="https://www.tiktok.com/music/original-sound-7433618559584930602?refer=embed">\u266c original sound - Douglife</a></section></blockquote>`;
+
 function App() {
   const [countdown, setCountdown] = useState(getTimeRemaining());
+  const [isProposalVideoOpen, setIsProposalVideoOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -67,6 +70,42 @@ function App() {
 
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    const hasScript = document.querySelector('script[src="https://www.tiktok.com/embed.js"]');
+    if (hasScript) {
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://www.tiktok.com/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
+  useEffect(() => {
+    if (!isProposalVideoOpen) {
+      return undefined;
+    }
+
+    document.body.style.overflow = 'hidden';
+    if (typeof window.tiktokEmbedLoad === 'function') {
+      window.tiktokEmbedLoad();
+    }
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsProposalVideoOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [isProposalVideoOpen]);
 
   const timeline = [
     { day: countdown.days, label: 'Days' },
@@ -112,7 +151,7 @@ function App() {
         <section className="section intro">
           <p className="section-kicker">Bride &amp; Groom</p>
           <h2>Our Story</h2>
-          <p>
+          <p className="story-paragraph">
             Doug and Tiffany met on February 10, 2024, on a blind date in Palatka, Florida.
             Tiffany spotted Doug beneath the clock tower across from the restaurant, and they fell
             in love that very night. They were seated at table 13, a number that became an
@@ -122,14 +161,29 @@ function App() {
             lived a lot of life, and through every tribulation, their love has remained constant.
             It guides them, gives them strength, and reminds them that they are soulmates destined
             to meet on that fateful February evening.
-            <br />
-            <br />
+          </p>
+          <div className="proposal-video-link-wrap">
+            <a
+              className="proposal-video-link"
+              href="#proposal-video-modal"
+              aria-haspopup="dialog"
+              aria-controls="proposal-video-modal"
+              onClick={(event) => {
+                event.preventDefault();
+                setIsProposalVideoOpen(true);
+              }}
+            >
+              <span className="play-icon" aria-hidden="true" />
+              <span>Watch Proposal Moment</span>
+            </a>
+          </div>
+          <p className="story-paragraph">
             Doug proposed to Tiffany on November 3,
             2024, at Taylor Swift's final US performance of the Eras Tour. Surrounded by 69,000
             Swifties, Doug asked Tiffany to marry him while Taylor sang Love Story, and the crowd
             cheered.
-            <br />
-            <br />
+          </p>
+          <p className="story-paragraph">
             They celebrated their engagement at an unforgettable show and continue to
             share a love of traveling, trying new restaurants, Taylor Swift, and their pets: Row
             Eliza, Poncho, Winston, Fee-Fee, Bao, Bun, Spottie, Dottie, and Smokey.
@@ -234,6 +288,32 @@ function App() {
           />
         </section>
       </main>
+
+      <div
+        id="proposal-video-modal"
+        className={`video-modal${isProposalVideoOpen ? ' open' : ''}`}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!isProposalVideoOpen}
+        aria-labelledby="proposal-video-title"
+        onClick={() => setIsProposalVideoOpen(false)}
+      >
+        <div className="video-modal-content" onClick={(event) => event.stopPropagation()}>
+          <button
+            type="button"
+            className="video-modal-close"
+            aria-label="Close proposal video"
+            onClick={() => setIsProposalVideoOpen(false)}
+          >
+            Close
+          </button>
+          <h3 id="proposal-video-title">Proposal Video</h3>
+          <div
+            className="tiktok-embed-wrap"
+            dangerouslySetInnerHTML={{ __html: tiktokEmbedMarkup }}
+          />
+        </div>
+      </div>
 
       <footer className="footer">
         <div>
