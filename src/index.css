@@ -203,20 +203,20 @@ h4 {
 }
 
 .rsvp {
-  background: linear-gradient(90deg, var(--soft-blue) 0 50%, #f7f7f7 50% 100%);
+  padding: 0;
 }
 
 .rsvp-note {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.82)),
-    url('/IMG_2722 (1).png'),
-    url('https://thevenue.us/wp-content/uploads/2026/03/Dorosh-Documentaries-The-Venue-8863.jpg');
+  background-image: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.76)),
+    url('../winter-wonderland-bg.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   border: 1px solid var(--line);
-  padding: 1.25rem;
-  max-width: 700px;
-  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+  width: 100%;
+  max-width: none;
+  margin: 0;
   text-align: center;
 }
 
@@ -262,8 +262,8 @@ button {
 }
 
 .banner-date {
-  background: linear-gradient(rgba(109, 126, 154, 0.75), rgba(109, 126, 154, 0.75)),
-    url('https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=2000&q=80')
+  background: linear-gradient(rgba(80, 62, 44, 0.35), rgba(80, 62, 44, 0.35)),
+    url('../winter-scene.png')
       center / cover no-repeat;
   color: #fff;
   text-align: center;

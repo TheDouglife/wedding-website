@@ -49,6 +49,11 @@ Primary styling lives in `src/index.css`:
 
 The app spec is in `.do/app.yaml`.
 
+The custom domains are declared in the app spec. If DNS is managed outside DigitalOcean,
+add a CNAME record for `www` pointing to `dl-wedding-app-598yl.ondigitalocean.app`.
+The apex domain remains the primary domain and `www.montgomery.wedding` is configured as
+an App Platform alias.
+
 What to do:
 
 1. Push this repo to GitHub.

@@ -1,5 +1,10 @@
 name: wedding-website
 region: nyc
+domains:
+  - domain: montgomery.wedding
+    type: PRIMARY
+  - domain: www.montgomery.wedding
+    type: ALIAS
 static_sites:
   - name: web
     github:

@@ -170,7 +170,7 @@ function App() {
                 alt="Groom portrait"
               />
               <h3>Douglas Allen Montgomery JR</h3>
-              <p>Engineer, mountain dreamer, and the calm heart behind our adventure.</p>
+              <p>Software Engineer, lifelong problem solver and devoted animal lover who finds joy in all facets of life.</p>
             </article>
           </div>
         </section>
@@ -209,7 +209,7 @@ function App() {
 
         <section className="banner-date">
           <p>December 13th, 2026</p>
-          <span>Ceremony begins at 5:00 PM</span>
+          <span>Ceremony begins at 4:30 PM</span>
         </section>
 
         <section className="section when-where">
