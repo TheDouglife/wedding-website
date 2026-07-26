@@ -341,17 +341,17 @@ function App() {
           </a>
         </div>
         <div>
-          <h4>Instagram</h4>
-          <div className="insta-row">
-            {Array.from({ length: 4 }).map((_, index) => (
-              <img
-                key={index}
-                src={`https://picsum.photos/seed/insta-${index + 1}/120/120`}
-                alt={`Instagram ${index + 1}`}
-                loading="lazy"
-              />
-            ))}
-          </div>
+          <h4 aria-hidden="true">&nbsp;</h4>
+          <p>
+            Made with love by{' '}
+            <a
+              href="https://douglife.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Douglife.com
+            </a>
+          </p>
         </div>
       </footer>
     </div>
