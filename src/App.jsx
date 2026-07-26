@@ -207,11 +207,6 @@ function App() {
           </div>
         </section>
 
-        <section className="banner-date">
-          <p>December 13th, 2026</p>
-          <span>Ceremony begins at 4:30 PM</span>
-        </section>
-
         <section className="section when-where">
           <h2>Details</h2>
           <div className="event-grid">
@@ -224,6 +219,11 @@ function App() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section className="banner-date">
+          <p>December 13th, 2026</p>
+          <span>Ceremony begins at 4:30 PM</span>
         </section>
 
         <section className="map" aria-label="Map preview">
