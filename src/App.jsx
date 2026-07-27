@@ -63,6 +63,15 @@ const tiktokEmbedMarkup = `<blockquote class="tiktok-embed" cite="https://www.ti
 function App() {
   const [countdown, setCountdown] = useState(getTimeRemaining());
   const [isProposalVideoOpen, setIsProposalVideoOpen] = useState(false);
+  const [visitorCount, setVisitorCount] = useState(0);
+
+  useEffect(() => {
+    // Fetch and increment visitor count
+    fetch('/api/visitors')
+      .then(res => res.json())
+      .then(data => setVisitorCount(data.count))
+      .catch(err => console.error('Failed to fetch visitor count:', err));
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -207,25 +216,26 @@ function App() {
               <p>Costume Designer, Dog Mom, Rhinestone Afficianato, and lover of all things sparkley.</p>
             </article>
             <article className="person featured">
-              <h3>The Wedding Day</h3>
+              <h3>Wedding Day Schedule</h3>
               <p>
-                They have lived a lot of life in the short time they have known each other, and
-                through all life tribulations, the love they share always remains.
-              </p>
+              Sunday, December 13, 2026
+
+4:00 PM — Guest Arrival
+4:30 PM — Ceremony Begins Promptly
+5:00–6:00 PM — Cocktail Hour
+6:00–10:00 PM — Reception
+11:00 PM — Send-Off</p>
               <p>
-                It guides them, gives them strength, and reminds them they are soulmates destined
-                to meet that fateful February evening.
-              </p>
+              <h3>Why December 13?</h3>
+Our wedding day falls on Taylor Swift’s birthday, making the date especially fun and meaningful to us. The number 13 has always been our lucky number, so December 13 felt like the perfect day to begin this next chapter together.
+
+We cannot wait to share this momentous holiday celebration with the people we love most!</p>
+              <h3>A Special Thank You</h3>
               <p>
-                Doug proposed to Tiffany on November 3rd, 2024, at Taylor Swift's final US
-                performance of the Eras Tour. Surrounded by 69,000 Swifties, he proposed while
-                Taylor sang Love Story, and the entire crowd cheered.
-              </p>
-              <p>
-                They celebrated their engagement at an unforgettable show and continue to share a
-                love of travel, trying new restaurants, Taylor Swift, and their pets: Row Eliza,
-                Poncho, Winston, Fee-Fee, Bao, Bun, Spottie, Dottie, and Smokey.
-              </p>
+             We would like to extend a very special thank-you to Tiffany’s grandparents, Cheryl and Bob Myers. Your love, generosity, and support have meant more to us than words can fully express. We are incredibly grateful to have you beside us as we celebrate our wedding day and begin our marriage.
+
+</p>
+
             </article>
             <article className="person">
               <img
@@ -352,6 +362,10 @@ function App() {
               Douglife.com
             </a>
           </p>
+        </div>
+        <div>
+          <h4 aria-hidden="true">&nbsp;</h4>
+          <p>👥 Visitors: {visitorCount}</p>
         </div>
       </footer>
     </div>
