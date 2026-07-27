@@ -526,3 +526,38 @@ button {
     transform: translateY(0);
   }
 }
+
+/* Geocities-style visitor counter */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.geocities-counter {
+  display: inline-block;
+  background: linear-gradient(145deg, #ffff00, #ffee00);
+  border: 3px outset #ffcc00;
+  box-shadow: 
+    inset 1px 1px 0px #ffffff,
+    inset -2px -2px 0px #999999,
+    0px 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 8px 12px;
+  font-family: 'VT323', 'Courier New', monospace;
+  font-size: 1.5rem;
+  color: #000080;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  position: relative;
+}
+
+.geocities-counter::before {
+  content: '👁️ ';
+  margin-right: 4px;
+}
+
+.geocities-counter-number {
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.footer .geocities-counter {
+  margin-top: 0.5rem;
+}

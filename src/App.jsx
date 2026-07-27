@@ -365,7 +365,9 @@ We cannot wait to share this momentous holiday celebration with the people we lo
         </div>
         <div>
           <h4 aria-hidden="true">&nbsp;</h4>
-          <p>👥 Visitors: {visitorCount}</p>
+          <div className="geocities-counter">
+            <span className="geocities-counter-number">{String(visitorCount).padStart(6, '0')}</span>
+          </div>
         </div>
       </footer>
     </div>
